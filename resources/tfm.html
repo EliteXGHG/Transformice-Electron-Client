@@ -1,0 +1,62 @@
+<html>
+
+<head>
+    <title>Transformice</title>
+</head>
+
+<body>
+    <!-- tfm-ext.js dependencies -->
+    <script src="https://apis.google.com/js/platform.js?onload=initialiserGAPI" async="" defer="" gapi_processed="true"></script>
+    <script id="tfm-ext" type="text/javascript" src="tfm-ext.js"></script>
+
+    <script type="text/javascript" src="youtube-tfm.js"></script>
+    <script type="text/javascript" src="lib.js"></script>
+
+    <div id="transformice" style="width:100%;height:100%;position: fixed; left: 0px; top: 0px;">
+
+    </div>
+
+    <script type="text/javascript">
+
+        function setAttrs(node, attrs) {
+            for (var key in attrs) {
+                node.setAttribute(key, attrs[key])
+            }
+        }
+        
+        function createSwfEmbed() {
+            var swfemb = document.createElement("embed");
+
+            setAttrs(swfemb, {
+                    id: "swf2",
+                    src: "http://www.transformice.com/TransformiceChargeur.swf",
+                    type: "application/x-shockwave-flash",
+                    name: "Transformice",
+                    width: "100%",
+                    height: "100%",
+                    align: "middle",
+
+                    /* SWF params */
+                    allowFullscreen: true,
+                    allowScriptAccess: "always",
+                    swLiveConnect: true,
+                    menu: true,
+                    quality: "high",
+                    bgcolor: "#6A7495",
+                    wmode: "direct",
+                });
+
+            /* Alignment parameter */
+            var thisurl = new URL(window.location.href);
+            if (align = thisurl.searchParams.get("align")) {
+                swfemb.setAttribute("salign", align);
+            }
+
+            document.getElementById("transformice").appendChild(swfemb);
+        }
+
+        createSwfEmbed();
+    </script>
+</body>
+
+</html>

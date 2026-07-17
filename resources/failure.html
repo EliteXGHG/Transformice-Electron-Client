@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            overflow: hidden;
+            background-color: #1a1a2e;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: #e0e0e0;
+        }
+        #error {
+            text-align: center;
+            padding: 24px;
+            border: 2px solid #ff4466;
+            border-radius: 16px;
+            background: #16213e;
+            max-width: 400px;
+            font-size: 14px;
+            line-height: 1.6;
+            box-shadow: 0 0 30px rgba(255, 68, 102, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div id="error"></div>
+    <script>
+        window.electron.getTeError().then(function(errDesc) {
+            document.getElementById("error").innerHTML = errDesc;
+        });
+    </script>
+</body>
+</html>

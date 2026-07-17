@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Settings</title>
+  <link rel="stylesheet" href="prefs.css">
+</head>
+<body>
+    <div class="container">
+    <div id="navigation">
+      <div class="nav-header">
+        <div class="nav-title">Elite's<span class="nav-title-sub">Electron</span><span class="nav-title-sub">Client</span></div>
+        <div class="nav-actions">
+          <button id="undo-btn" class="undo-btn" disabled>Undo</button>
+          <button id="redo-btn" class="redo-btn" disabled>Redo</button>
+          <button id="editor-btn" class="editor-btn">Editor</button>
+        </div>
+      </div>
+      <table id="nav-table"></table>
+    </div>
+    <div id="content">
+      <div id="search-wrap">
+        <div id="search-bar-inner">
+          <svg id="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input id="search-bar" type="text" placeholder="Search settings...">
+        </div>
+      </div>
+      <div id="settings-content"></div>
+    </div>
+  </div>
+  <script src="prefs.js"></script>
+</body>
+</html>
